@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddContactForm from "./add-contact-form";
+import ContactCard from "./contact-card";
 import { Person } from "./Person";
 
 const ContactBook = () => {
@@ -13,13 +14,9 @@ const ContactBook = () => {
     <div>
       <AddContactForm onAddContact={handleAddContact} />
       <div>
-        <ul>
-          {persons.map((person) => (
-            <li key={person.name}>
-              {person.name} ({person.city})
-            </li>
-          ))}
-        </ul>
+        {persons.map((person) => (
+          <ContactCard key={person.name} person={person} />
+        ))}
       </div>
     </div>
   );
