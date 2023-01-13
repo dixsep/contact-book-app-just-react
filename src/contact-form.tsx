@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Person } from "./Person";
 
-const ContactForm = ({ onSave, title }) => {
-  const [person, setPerson] = useState<Person>(null);
+const ContactForm = ({ onSave, title, initialPerson = null }) => {
+  const [person, setPerson] = useState<Person>(initialPerson);
 
   const handleSave = (e) => {
     e.preventDefault();
