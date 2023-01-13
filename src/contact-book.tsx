@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddContactForm from "./add-contact-form";
+import ContactForm from "./contact-form";
 import ContactCard from "./contact-card";
 import { Person } from "./Person";
 import { v4 as uuidv4 } from "uuid";
@@ -16,7 +16,7 @@ const ContactBook = () => {
 
   return (
     <div>
-      <AddContactForm onAddContact={handleAddContact} />
+      <ContactForm title="Add a new contact" onSave={handleAddContact} />
       <div>
         {persons.map((person) => {
           if (personBeingEdited && person.id === personBeingEdited) {
